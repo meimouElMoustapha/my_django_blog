@@ -1,0 +1,40 @@
+{% extends 'base/main.html' %}
+{%block title %}  welcome to home page |{%endblock title %}
+
+
+{% block content %}
+
+
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <p class="text-warning bg-info" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+    {% endfor %}
+</ul>
+{% endif %}
+{% for task in object_list %}
+<br>
+
+<div class="container">
+
+    <div class ="row justify-content">
+<div class="col-md-4">
+   
+       
+     
+          <h5 class="card-title">{{task.title}}</h5>
+          <p class="card-text">{{task.comment}}.</p>
+          <a href="{{task.id}}" class="btn btn-primary">view</a>
+          <h6>{{task.user}}</h6>
+   
+
+</div>
+
+    </div>
+    
+    </div>
+    {%endfor %}
+
+
+
+{%endblock content %}

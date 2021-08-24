@@ -1,0 +1,40 @@
+{% extends "base/main.html" %}
+{%load static %}
+{% block title %} Profile page {% endblock title%}
+
+{% block content %}
+    <div class="container">
+      <div class="media">
+        <!-- <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"> -->
+        <div class="media-body">
+      
+        
+         
+         <hr>
+<!-- profile_details -->
+
+{% if request.user.is_authenticated%} 
+
+
+<img class="img-thumbnail img-rounded  account-img ig" 
+style="height:300px;width:300px;"
+src="{{ user.profile.image_field.url}}" alt="ytt">
+<p> My name is : {{user}}</p>
+<p class="account-heading"> i live in  {{ user.profile.location}}</p>
+          <p class="text-secondary">my bio :{{ user.profile.bio }}</p>
+         
+          <ul>
+            <p class="text-secondary">i speak :{{ user.profile.language }}</p>
+            
+       
+      
+
+{% endif %}
+
+
+      
+        </div>
+      </div>
+      <!-- FORM HERE -->
+    </div>
+{% endblock content %}

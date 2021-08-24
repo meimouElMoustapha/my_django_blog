@@ -1,0 +1,30 @@
+{%extends "base/main.html"%}
+
+{% load crispy_forms_tags %}
+{% block title%} update post {%endblock title %}
+
+{%block content %}
+<div class="container">
+
+    <div class="form-group">
+<h1 class="text-center text-primary">Update post </h1>
+
+<form action=""  method="POST" enctype="multipart/form-data">
+    
+    {%csrf_token%}
+ 
+    <!-- {{form.as_p}} -->
+
+    {{form|crispy }}
+
+<button class="btn btn-primary">Update </button>
+
+<a href="{% url 'home' %}"class="btn btn-dark"> back</a>
+</form>
+
+
+
+
+</div>
+</div>
+{%endblock %}

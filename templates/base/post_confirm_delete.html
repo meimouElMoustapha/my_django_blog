@@ -1,0 +1,38 @@
+{% extends 'base/main.html' %}
+{%block title %} |confirm delete page {%endblock title%}
+
+
+{%block content %}
+
+
+
+
+
+<div class="container">
+
+    <div class="header-bar">
+<fieldset class="form-group">
+<p class="bg-warning">are you sure you want to delete <b> {{obj.title}}</b> ?</p>
+
+<form method="POST" action="">
+    
+    {%csrf_token%}
+
+
+ <button class="btn btn-danger">Yes</button>
+ <a href="{% url 'detail' obj.pk %}"class="btn btn-dark"> cancel</a>
+
+
+</form>
+
+
+
+
+
+</fieldset>
+
+
+
+</div>
+</div>
+{%endblock content %}

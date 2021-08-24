@@ -1,0 +1,42 @@
+{% extends 'base/main.html' %}
+{%load static %}
+{%block title %} | detail {%endblock title%}
+{%block content %}
+
+<div class="container">
+    
+   
+     
+<p>  {{obj.field}}</p> 
+
+
+<p>  {{obj.comment}}</p>
+
+<p>{{obj.content}}</p>
+<!-- <p>{{obj.Image}}</p> -->
+
+<br>
+
+<img class="img-thumbnail img-rounded ig" style="height:300px;width:300px;" src="{{obj.Image.url}} "/> 
+
+
+<br><br>
+
+<p>  created on {{obj.updated}}</p><br>
+<p>{{obj.user}}</p>
+
+
+<a href="{% url 'update' obj.pk%}"> <button class="btn btn-primary">--Update</button>
+</a>
+
+<a href="{% url 'delete' obj.pk%}"> <button class="btn btn-danger">--Delete</button>
+</a>
+ 
+<br>
+
+</div>
+
+
+
+
+{%endblock content %}
